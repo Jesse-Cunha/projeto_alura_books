@@ -1,0 +1,139 @@
+.cabecalho__menu-hamburguer{
+
+    width: 24px;
+    height: 24px;
+    /* atenção: essa é a imagem que está contida dentro do elemento 'span' do HTML: */
+    background-image: url("../img/Menu.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    display: inline-block;
+    margin: 0 0 0 0.5rem;
+}
+
+.cabecalho{
+
+    background-color: var(--branco);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    /* o position relative aqui é apenas para o cabeçalho não ficar 'static', pois, assim, conseguimos manipular corretamente a lista-menu atribuindo a lista com position 'absolute'  */
+    position: relative;
+}
+
+.container{
+
+    display: flex;
+    align-items: center;
+}
+
+.container__imagem{
+
+    padding: 1em;
+}
+
+.lista-menu{
+
+    display: none;
+    /* esse position 'absolute' faz com que a lista-menu se movimente tendo como referência seu PAI, que é o cabeçalho */
+    position: absolute;
+    /* aqui, fazemos o cabeçalho ficar 100% acima da lista-menu */
+    top: 100%;
+    /* width: 60vw; */
+}
+
+.lista-menu__titulo{
+
+    color: var(--laranja);
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.lista-menu__link{
+
+    /* cores em degradê não funcionam direto nas fontes, então temos que dar um jeitinho de fazer o fundo da âncora virar um "texto": */
+    background: var(--azul-degrade);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* o texto está ficando transparente, e o fundo está sendo preenchido pelo degradê exatamente com o formato do texto */
+}
+
+.lista-menu__titulo,
+.lista-menu__item{
+
+    padding: 1em;
+    background-color: var(--branco);
+
+}
+
+/* usamos a pseudoclasse 'checked' pra, caso o checkbox esteja marcado, usarmos o combinador de elementos (o til ~) pra agir sobre o estilo da lissta-menu. É parecido com um IF:*/
+.container__botao:checked ~.lista-menu{
+
+    display: block;
+}
+
+.container__botao{
+
+    display: none;
+}
+
+.container__titulo{
+
+    display: none;
+}
+
+.opcoes{
+
+    display: none;
+}
+
+@media screen and (min-width: 1024px){
+
+  
+
+    .container__titulo, .container__titulo--negrito{
+
+        font-family: var(--fonte-secundaria);
+        font-size: calc((15/8)*1rem);
+    }
+
+    .container__titulo{
+
+        font-weight: 400;
+        display: block;
+    }
+
+    .container__titulo--negrito{
+
+        font-weight: 700;
+    }
+
+    .opcoes{
+
+        display: flex;
+    }
+
+    .opcoes__item{
+
+        padding: 0 1em;
+        text-transform: uppercase;
+    }
+
+    .opcoes__link{
+
+        text-decoration: none;
+        color: var(--preto);
+    }
+
+    .container__imagem-transparente{
+
+        display: none;
+    }
+
+    .cabecalho__menu-hamburguer{
+
+        display: none;
+    }
+
+}

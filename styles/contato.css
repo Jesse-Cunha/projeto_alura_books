@@ -1,0 +1,55 @@
+.contato{
+
+    background-color: var(--branco);
+    padding: 1em;
+    text-align: center;
+    
+}
+
+.contato__titulo{
+
+    /* cores em degradê não funcionam direto nas fontes, então temos que dar um jeitinho de fazer o fundo da âncora virar um "texto": */
+    background: var(--azul-degrade);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* o texto está ficando transparente, e o fundo está sendo preenchido pelo degradê exatamente com o formato do texto */
+    font-size: calc(9/8*1rem);
+    font-weight: 500;
+}
+
+.contato__texto{
+
+     /* cores em degradê não funcionam direto nas fontes, então temos que dar um jeitinho de fazer o fundo da âncora virar um "texto": */
+    background: var(--azul-degrade);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* o texto está ficando transparente, e o fundo está sendo preenchido pelo degradê exatamente com o formato do texto */
+    font-size: 1rem;
+    font-weight: 300;
+    margin: 1em 0;
+}
+
+.contato__email{
+
+    padding: 1em;
+    border: calc((1/16)*1rem) solid var(--azul);
+    border-radius:1rem;
+    width: 80%;
+    color: var(--azul);
+}
+
+.contato__email::placeholder{
+    font-family: var(--fonte-principal);
+    color: var(--azul);
+    background: url("../img/Email.svg") no-repeat;
+    padding: 0 0 0 0.5em;
+    background-position: 1em;
+    text-align: center;
+}
+
+.contato__email:focus::placeholder{
+
+    opacity: 0;
+}
