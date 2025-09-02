@@ -114,6 +114,16 @@
         display: flex;
     }
 
+    .opcoes__botao:checked ~.lista-menu{
+
+        display: block;
+    }
+
+    .opcoes__botao{
+
+        display: none;
+    }
+
     .opcoes__item{
 
         padding: 0 1em;

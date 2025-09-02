@@ -44,3 +44,21 @@
 
     opacity: 0;
 }
+
+@media screen and (min-width: 1024px){
+
+    .banner__titulo{
+
+        font-size: calc((9/4)*1rem);
+    }
+
+    .banner__pesquisa{
+
+        width: 50%;
+    }
+
+    .banner__pesquisa::placeholder{
+
+        background-position: 22.5%;
+    }
+}

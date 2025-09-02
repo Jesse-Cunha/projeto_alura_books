@@ -53,9 +53,29 @@
         </div>
 
         <ul class = "opcoes">
-            <li class = "opcoes__item">Categorias</li>
+            <input type = "checkbox" id = "opcoes-menu" class = "opcoes__botao">
+            <label for = "opcoes-menu"><li class = "opcoes__item">Categorias</li></label>
+            <ul class = "lista-menu">
+                <li class = "lista-menu__titulo">Categorias</li>
+                <li class = "lista-menu__item">
+                    <a href ="#" class = "lista-menu__link">PROGRAMAÇÃO</a>
+                </li>
+                <li class = "lista-menu__item">
+                    <a href ="#" class = "lista-menu__link">FRONT-END</a>
+                </li>
+                <li class = "lista-menu__item">
+                    <a href ="#" class = "lista-menu__link">INFRAESTRUTURA</a>
+                </li>
+                <li class = "lista-menu__item">
+                    <a href ="#" class = "lista-menu__link">BUSINESS</a>
+                </li>
+                <li class = "lista-menu__item">
+                    <a href ="#" class = "lista-menu__link">DESIGN & UX</a>
+                </li>
+            </ul>
             <li class = "opcoes__item"><a href = "#" class = "opcoes__link">Favoritos</a></li>
             <li class = "opcoes__item"><a href = "#" class = "opcoes__link">Minha estante</a></li>
+
         </ul>
 
         <div class = "container">
@@ -81,6 +101,11 @@
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
                 <!-- Slides -->
+                <div class="swiper-slide"><img src = "img/ApacheKafka.svg" alt = "Livro sobre Apache Kafka e Spring Boot"> </div>
+                <div class="swiper-slide"><img src = "img/Javascript.svg" alt = "Livro sobre JavaScript"> </div>
+                <div class="swiper-slide"><img src = "img/Guia Front-end.svg" alt = "Livro que é um guia Front-End"> </div>
+                <div class="swiper-slide"><img src = "img/Lideranca.svg" alt = "Livro sobre Liderança"> </div>
+                <div class="swiper-slide"><img src = "img/Portugol.svg" alt = "Livro sobre Portugol"> </div>
                 <div class="swiper-slide"><img src = "img/ApacheKafka.svg" alt = "Livro sobre Apache Kafka e Spring Boot"> </div>
                 <div class="swiper-slide"><img src = "img/Javascript.svg" alt = "Livro sobre JavaScript"> </div>
                 <div class="swiper-slide"><img src = "img/Guia Front-end.svg" alt = "Livro que é um guia Front-End"> </div>
@@ -141,6 +166,11 @@
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
                 <!-- Slides -->
+                <div class="swiper-slide"><img src = "img/ApacheKafka.svg" alt = "Livro sobre Apache Kafka e Spring Boot"> </div>
+                <div class="swiper-slide"><img src = "img/Javascript.svg" alt = "Livro sobre JavaScript"> </div>
+                <div class="swiper-slide"><img src = "img/Guia Front-end.svg" alt = "Livro que é um guia Front-End"> </div>
+                <div class="swiper-slide"><img src = "img/Lideranca.svg" alt = "Livro sobre Liderança"> </div>
+                <div class="swiper-slide"><img src = "img/Portugol.svg" alt = "Livro sobre Portugol"> </div>
                 <div class="swiper-slide"><img src = "img/ApacheKafka.svg" alt = "Livro sobre Apache Kafka e Spring Boot"> </div>
                 <div class="swiper-slide"><img src = "img/Javascript.svg" alt = "Livro sobre JavaScript"> </div>
                 <div class="swiper-slide"><img src = "img/Guia Front-end.svg" alt = "Livro que é um guia Front-End"> </div>
@@ -218,10 +248,14 @@
             <li class = "topicos__item">
                 <a href = "#" class = "topicos__link">Java</a>
             </li>
+            
    </section>
    <section class = "contato">
+
+        <div class = "contato__descricao">
         <h2 class = "contato__titulo">Fique por dentro das novidades!</h2>
         <p class = "contato__texto">Atualizações de e-books, novos livros, promoções e outros.</p>
+        </div>
         <input type = "email" placeholder = "Cadastre seu e-mail" class = "contato__email">
 
    </section>
@@ -237,15 +271,24 @@
    <!-- Pro Swiper funcionar, precisa desses scripts: -->
    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
    <script>
-        const swiper = new Swiper('.swiper', {
+
+    document.querySelectorAll(".swiper").forEach((element) => {
+        
+        new Swiper(element, {
         // speed: 400,
         spaceBetween: 30,
-        slidesPerView: 3,
+        slidesPerView: 4,
+        navigation: {
+        nextEl: element.querySelector('.swiper-button-next'),
+        prevEl: element.querySelector('.swiper-button-prev'),
+      },
         pagination: {
             el: '.swiper-pagination',
             type: 'bullets',
+            clickable: true,
         },
         });
+    });
     </script>
    <!-- ___________________________________________________________ -->
 
