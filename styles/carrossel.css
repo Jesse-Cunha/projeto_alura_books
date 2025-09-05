@@ -136,3 +136,51 @@
     }
 
 }
+
+@media screen and (min-width: 1728px){
+
+    .carrossel__container{
+
+        display: flex;
+        align-items: center;
+        margin: 0 15vw 3em 15vw;
+        
+    } 
+    .swiper-pagination{
+
+        margin: 1em 0;
+    }
+    .swiper{
+
+        width: 100%;
+        
+    }
+
+    .swiper-button-next, .swiper-button-prev{
+
+        top: 60%;
+    }
+
+    .descricao__titulo{
+
+        font-size: 1.75rem;
+        margin-top: 0.25em;
+    }
+
+    .descricao__texto{
+
+        font-size: 1rem;
+        margin-top: 1em;
+    }
+
+    .card{
+
+        width: 80%;
+        margin: 2em 0 0 3em;
+    }
+    .descricao{
+
+      padding: 1em 0 0 0;
+    }
+    
+}

@@ -1,13 +1,13 @@
 .cabecalho__menu-hamburguer{
 
-    width: 24px;
-    height: 24px;
+    width: 36px;
+    height: 36px;
     /* atenção: essa é a imagem que está contida dentro do elemento 'span' do HTML: */
     background-image: url("../img/Menu.svg");
     background-repeat: no-repeat;
     background-position: center;
     display: inline-block;
-    margin: 0 0 0 0.5rem;
+    margin: 0.5rem;
 }
 
 .cabecalho{
@@ -21,12 +21,32 @@
     position: relative;
 }
 
+
 .container{
 
     display: flex;
     align-items: center;
+    justify-content: center;
+    height: 100%;
 }
 
+.container__rotulo{
+
+   padding: 1em;
+   
+}
+
+.container__botao:checked ~.container__rotulo > .cabecalho__menu-hamburguer{
+
+    background-image: url("/img/MenuAberto.svg");
+    
+}
+
+.container__botao:checked ~.container__rotulo{
+
+    background: var(--azul-degrade);
+
+}
 .container__imagem{
 
     padding: 1em;
@@ -88,9 +108,12 @@
     display: none;
 }
 
-@media screen and (min-width: 1024px){
+.container__texto{
 
-  
+    display: none;
+}
+
+@media screen and (min-width: 1024px){
 
     .container__titulo, .container__titulo--negrito{
 
@@ -119,6 +142,24 @@
         display: block;
     }
 
+    .opcoes__botao:checked ~ .opcoes__rotulo > .opcoes__item{
+
+        background: var(--azul-degrade);
+        color: var(--branco);
+       
+    }
+
+    .lista-menu__item:hover{
+
+        background: var(--azul-degrade);
+        
+    }
+
+    .lista-menu__item:hover > .lista-menu__link{
+
+        -webkit-text-fill-color: var(--branco);
+        text-decoration: none;
+    }
     .opcoes__botao{
 
         display: none;
@@ -126,7 +167,7 @@
 
     .opcoes__item{
 
-        padding: 0 1em;
+        padding: 2em 1em;
         text-transform: uppercase;
     }
 
@@ -145,5 +186,33 @@
 
         display: none;
     }
+}
+
+@media screen and (min-width: 1728px){
+
+    .container__link{
+
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: var(--preto);
+    }
+
+    .container__texto{
+
+        display: block;
+    }
+
+    .cabecalho{
+
+        padding: 0 2em;
+    }
+
+    .opcoes{
+
+        margin-right: auto;
+        padding: 0 0 0 3em;
+    }
+
 
 }
